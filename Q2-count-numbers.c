@@ -13,8 +13,8 @@ int main()
     /* you must verify the scanf() evaluation result. Else if a non-integer value is given as input to the program,
     the input stream doesn't clear for next loops and the program enters an infinite loop*/
     int result = scanf("%d", &number);
-    /*you must clear the input stream buffer, else next scanf() might use the buffer of previous input but not the desired input
-    https://www.geeksforgeeks.org/clearing-the-input-buffer-in-cc/ */
+    /*you must clear the input stream buffer, else next scanf() in the loop might use the buffer of previous input buffer 
+    but not the desired input buffer. -> https://www.geeksforgeeks.org/clearing-the-input-buffer-in-cc/ */
     while ((getchar()) != ‘\n’); 
     if (result != 1)
     {
