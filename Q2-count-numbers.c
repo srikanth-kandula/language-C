@@ -7,12 +7,15 @@ int main()
   int number, positives = 0, negatives = 0, zeros = 0;
   char choice;
   
-  printf("Hello! Enter numbers you like. Write \"N\" if you want to stop entering the numbers\n");
+  printf("Hello! Enter a number you like.\n");
   do
   {
     /* you must verify the scanf() evaluation result. Else if a non-integer value is given as input to the program,
     the input stream doesn't clear for next loops and the program enters an infinite loop*/
     int result = scanf("%d", &number);
+    /*you must clear the input stream buffer, else next scanf() might use the buffer of previous input but not the desired input
+    https://www.geeksforgeeks.org/clearing-the-input-buffer-in-cc/ */
+    while ((getchar()) != ‘\n’); 
     if (result != 1)
     {
       printf("Last call to scanf() failed; exiting\n");
