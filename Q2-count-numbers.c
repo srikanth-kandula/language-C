@@ -10,6 +10,8 @@ int main()
   printf("Hello! Enter numbers you like. Write \"N\" if you want to stop entering the numbers\n");
   do
   {
+    /* you must verify the scanf() evaluation result. Else if a non-integer value is given as input to the program,
+    the input stream doesn't clear for next loops and the program enters an infinite loop*/
     int result = scanf("%d", &number);
     if (result != 1)
     {
